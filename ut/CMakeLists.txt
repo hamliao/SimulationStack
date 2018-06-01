@@ -13,3 +13,6 @@ link_libraries(pthread)
 
 #generate executable file
 add_executable (gtest gtest.cpp)
+
+#add c++ compile flags
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall -ggdb")
