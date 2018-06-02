@@ -1,5 +1,6 @@
 #include directories
-include_directories ("${PROJECT_SOURCE_DIR}/includes")
+include_directories ("${PROJECT_SOURCE_DIR}/includes/interface")
+include_directories ("${PROJECT_SOURCE_DIR}/includes/protocol")
 include_directories ("${PROJECT_SOURCE_DIR}/gtestlibs")
 
 #include link directories
