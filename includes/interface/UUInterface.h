@@ -11,15 +11,15 @@ public:
 
 UUInterface::UUInterface()
 {
-	std::shared_ptr<Protocol> pdcpPoint(new Pdcp());
+	auto pdcpPoint(std::make_shared<Pdcp>());
 	protocolStack.push_back(pdcpPoint);
 	
-	std::shared_ptr<Protocol> rlcPoint(new Rlc());
+	auto rlcPoint(std::make_shared<Rlc>());
 	protocolStack.push_back(rlcPoint);
 
-	std::shared_ptr<Protocol> macPoint(new Mac());
+	auto macPoint(std::make_shared<Mac>());
 	protocolStack.push_back(macPoint);
 
-	std::shared_ptr<Protocol> phyPoint(new Phy());
+	auto phyPoint(std::make_shared<Phy>());
 	protocolStack.push_back(phyPoint);
 }

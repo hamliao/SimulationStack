@@ -18,7 +18,7 @@ public:
 
 bool Interface::sendData(Packet &userData) const
 {
-	for (auto index = protocolStack.begin(); index != protocolStack.end(); ++index)
+	for (auto index = protocolStack.cbegin(); index != protocolStack.cend(); ++index)
 	{
 		(*index)->encode(userData);
 	}
@@ -28,7 +28,7 @@ bool Interface::sendData(Packet &userData) const
 
 bool Interface::receiveData(Packet &userData) const
 {
-	for (auto index = protocolStack.end()-1; index != protocolStack.begin()-1; --index)
+	for (auto index = protocolStack.crbegin(); index != protocolStack.crend(); ++index)
 	{
 		(*index)->decode(userData);
 	}
